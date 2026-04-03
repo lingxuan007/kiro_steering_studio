@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Generated steering files (project-specific)
+.kiro
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+eslint.config*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE and editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.prettierrc
+.editorconfig
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Cache
+.npm/
+.eslintcache
+.cache/

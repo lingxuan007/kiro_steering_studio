@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiro Steering Studio</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="top">
+      <div class="brand">
+        <div class="title">Kiro Steering Studio</div>
+        <div class="pill" id="pill-status">Disconnected</div>
+        <div class="pill subtle" id="pill-output">…</div>
+      </div>
+
+      <div class="controls">
+        <button id="btn-start" class="btn primary">Start</button>
+        <button id="btn-pause" class="btn">Pause</button>
+        <button id="btn-end" class="btn danger">End</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="chat">
+        <div id="chat"></div>
+      </section>
+
+      <section class="drawer open" id="drawer">
+        <div class="drawer-head">
+          <div class="drawer-title">Details</div>
+          <div class="drawer-sub">Tool calls + file updates</div>
+        </div>
+        <div class="drawer-body">
+<div class="card">
+            <div class="card-title">Tool calls</div>
+            <div id="tools" class="mono"></div>
+          </div>
+          <div class="card">
+            <div class="card-title">File updates</div>
+            <div id="files" class="mono"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="model-panel" id="model-panel">
+        <div class="model-panel-title">Model & cost</div>
+        <div class="model-panel-body">
+          <div class="mp-row"><div class="mp-k">Model</div><div class="mp-v" id="model-id">—</div></div>
+          <div class="mp-row"><div class="mp-k">Estimated cost</div><div class="mp-v" id="model-cost">—</div></div>
+          <div class="mp-meta" id="model-meta">
+            Estimates update as usage events arrive. Verify latest pricing:
+            <a href="https://aws.amazon.com/bedrock/pricing/" target="_blank" rel="noreferrer">aws.amazon.com/bedrock/pricing</a>
+          </div>
+        </div>
+      </div>
+      <div class="hint">Tip: Use Pause when you want to think out loud, step away from the mic, or avoid capturing side chatter. Resume when you’re ready.</div>
+    </footer>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
